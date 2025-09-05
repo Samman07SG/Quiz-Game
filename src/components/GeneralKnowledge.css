@@ -1,0 +1,505 @@
+.general-knowledge-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.knowledge-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.knowledge-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+
+.knowledge-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.knowledge-navigation {
+  margin-bottom: 40px;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #667eea #f1f1f1;
+}
+
+.nav-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav-tabs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.nav-tabs::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 3px;
+}
+
+.nav-tab {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  min-width: 200px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.nav-tab:hover::before {
+  left: 100%;
+}
+
+.nav-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.tab-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.tab-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.knowledge-content {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.content-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.content-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.content-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.knowledge-card {
+  background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+  border: 1px solid #e1e8ff;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.knowledge-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.knowledge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.point-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.point-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-content {
+  padding-left: 56px;
+}
+
+.point-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.point-tip {
+  background: rgba(102, 126, 234, 0.1);
+  border-left: 4px solid #667eea;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tip-label {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.tip-text {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.knowledge-footer {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.footer-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.knowledge-motivation {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.knowledge-motivation::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.motivation-card {
+  position: relative;
+  z-index: 1;
+}
+
+.motivation-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.motivation-card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.motivation-author {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .knowledge-header h1 {
+    font-size: 2rem;
+  }
+  
+  .knowledge-header p {
+    font-size: 1.1rem;
+  }
+  
+  .nav-tabs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .nav-tab {
+    min-width: auto;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .knowledge-content {
+    padding: 30px 20px;
+  }
+  
+  .content-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .content-header p {
+    font-size: 1rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .card-content {
+    padding-left: 0;
+  }
+  
+  .point-title {
+    font-size: 1.2rem;
+  }
+  
+  .footer-stats {
+    gap: 30px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .footer-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .knowledge-motivation {
+    padding: 30px 20px;
+  }
+  
+  .motivation-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .motivation-card p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .knowledge-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .knowledge-content {
+    padding: 20px 16px;
+  }
+  
+  .content-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .point-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .point-title {
+    font-size: 1.1rem;
+  }
+  
+  .point-description {
+    font-size: 0.95rem;
+  }
+  
+  .point-tip {
+    padding: 10px 12px;
+  }
+  
+  .tip-text {
+    font-size: 0.9rem;
+  }
+  
+  .footer-stats {
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .knowledge-motivation {
+    padding: 20px 16px;
+  }
+  
+  .motivation-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .motivation-card p {
+    font-size: 1rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .nav-tab {
+    border-width: 3px;
+  }
+  
+  .nav-tab.active {
+    border-width: 4px;
+  }
+  
+  .knowledge-card {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .nav-tab::before {
+    display: none;
+  }
+  
+  .knowledge-card:hover {
+    transform: none;
+  }
+  
+  .knowledge-motivation::before {
+    animation: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.nav-tab:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.nav-tab:focus:not(:focus-visible) {
+  outline: none;
+}
+

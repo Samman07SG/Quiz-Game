@@ -1,0 +1,224 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.timer-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.timer-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--timer-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timer-circle::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 3px solid var(--timer-color);
+  opacity: 0.3;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.timer-circle.critical {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+.timer-circle.warning {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.timer-time {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timer-message {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.timer-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  border: 1px solid #ffeaa7;
+  border-radius: 12px;
+  padding: 8px 16px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.warning-icon {
+  font-size: 1.2rem;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.warning-text {
+  color: #856404;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timer-circle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .timer-time {
+    font-size: 1.1rem;
+  }
+  
+  .timer-message {
+    font-size: 0.8rem;
+  }
+  
+  .timer-warning {
+    padding: 6px 12px;
+  }
+  
+  .warning-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .timer-time {
+    font-size: 1rem;
+  }
+  
+  .timer-message {
+    font-size: 0.75rem;
+  }
+  
+  .timer-warning {
+    padding: 4px 10px;
+    gap: 6px;
+  }
+  
+  .warning-icon {
+    font-size: 1rem;
+  }
+  
+  .warning-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .timer-circle {
+    border: 3px solid #000;
+  }
+  
+  .timer-circle::before {
+    border-width: 4px;
+  }
+  
+  .timer-warning {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .timer-circle::before {
+    animation: none;
+  }
+  
+  .timer-circle.critical {
+    animation: none;
+  }
+  
+  .timer-circle.warning {
+    animation: none;
+  }
+  
+  .warning-icon {
+    animation: none;
+  }
+  
+  .timer-warning {
+    animation: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.timer-container:focus-within {
+  outline: 2px solid #667eea;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
